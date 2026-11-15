@@ -1,0 +1,96 @@
+Git Commands Used
+Repository: https://github.com/Anushika06/web-git-workflow.git
+
+Step 1: Local Repository Setup
+git init -b main
+Initializes a new empty Git repository in the project folder with main as the default branch.
+
+git status
+Displays the state of the working directory and staging area, showing untracked files.
+
+Step 2: Git Workflow
+git add index.html about.html
+Stages index.html and about.html for inclusion in the upcoming commit.
+
+git commit -m "Initial commit: add index and about pages"
+Records staged changes in the repository as the project's root commit.
+
+git add index.html
+Stages modifications made to index.html after adding recent work details.
+
+git commit -m "Update index page with recent work section"
+Commits the updated index.html content to the main branch.
+
+Step 3: Branching and Merging
+git branch feature
+Creates a new branch named feature pointing to the current commit on main.
+
+git checkout feature
+Switches the active working directory and HEAD to the feature branch.
+
+git add about.html
+Stages modifications made to about.html on the feature branch.
+
+git commit -m "Add team section to about page"
+Commits the addition of the team section to the feature branch.
+
+git checkout main
+Switches HEAD and working directory back to the main branch.
+
+git merge feature --no-ff -m "Merge branch 'feature' into main"
+Merges the feature branch into main using a non-fast-forward merge, preserving branch topology.
+
+git log --oneline --graph --all
+Visualizes the commit history as a formatted ASCII graph across all branches.
+
+git branch -a
+Lists all local and remote-tracking branches available in the repository.
+
+Step 4: .gitignore Implementation
+git status --ignored
+Shows working tree status including files matched and excluded by .gitignore patterns.
+
+git add .gitignore
+Stages the .gitignore file containing ignore rules for log files and temporary folders.
+
+git commit -m "Add .gitignore for log files and temp directory"
+Records the .gitignore file in version control so ignore rules apply repository-wide.
+
+Step 5: Undo Operation
+git add index.html
+Stages changes to index.html containing the test footer element.
+
+git commit -m "Add footer to index page"
+Creates a commit containing the footer addition prior to reverting.
+
+git revert HEAD --no-edit
+Creates a new commit that inverts the changes of the latest commit without rewriting history.
+
+git show HEAD
+Displays the commit metadata and unified diff for the most recent commit.
+
+Step 6: GitHub Integration
+git remote add origin https://github.com/Anushika06/web-git-workflow.git
+Links the local repository to the remote GitHub repository under the name origin.
+
+git remote -v
+Lists all configured remote connections and their fetch and push URLs.
+
+git push -u origin main
+Pushes the local main branch to GitHub and configures upstream tracking.
+
+git push origin feature
+Pushes the local feature branch to the remote GitHub repository.
+
+git ls-remote --heads origin
+Queries and verifies branch references directly from the remote repository.
+
+Step 7: Documentation
+git add git_commands.txt
+Stages the command documentation file for version control.
+
+git commit -m "Add git command documentation"
+Commits the documentation file to the main branch.
+
+git push
+Pushes the documentation commit on main to the remote GitHub repository.
